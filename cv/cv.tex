@@ -1,0 +1,204 @@
+\documentclass{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\pagestyle{empty}
+\fancyfoot{}
+
+\newcommand{\themesep}{
+  \begin{center}
+    \vspace{-.7cm}
+    \rule[-0.25cm]{\textwidth}{0.1pt}
+  \end{center}
+  \vspace{0.25cm}
+}
+
+\newcommand{\dataalign}[2]{
+  \begin{minipage}[b]{0.33\textwidth}
+    {\textbf{#1}}:
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.67\textwidth}
+  #2
+  \end{minipage}
+  \vspace{3pt}
+}
+
+\newcommand{\expsep}{\vspace{0.3cm}}
+\newcommand{\lcol}{0.27\textwidth}
+\newcommand{\rcol}{0.70\textwidth}
+
+\newenvironment{tightemize}{
+  \vspace{-0.3cm}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
+  {\end{itemize}\vspace{-\topsep}
+}
+
+\newcommand{\lang}[2]{\normalsize{\bf #1} | {\normalsize #2}}
+
+\newcommand{\personaldata}[1]{
+  \noindent
+  {\Large\textsc{\textbf{Personal Data}}}
+  \themesep
+  \begin{minipage}[t]{\lcol}
+    \begin{center}
+    \includegraphics[width=.9\textwidth]{profile.png}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{\rcol}
+    \vspace{-3.5cm}
+    {\normalsize #1}
+  \end{minipage}
+  \expsep
+  \expsep
+}
+
+\newcommand{\theme}[2]{
+  \noindent
+  {\Large\textsc{\textbf{#1}}}
+  \themesep
+  {\normalsize #2}
+  \expsep
+  \expsep
+}
+\newcommand{\smalltheme}[2]{
+  \begin{minipage}[t]{0.33\textwidth}
+    {\Large\bf #1}\\
+    {\normalsize #2}
+  \end{minipage}
+}
+
+\newcommand{\experience}[5]{
+  \noindent
+  \begin{minipage}[t]{\lcol}
+    {\large #2}
+    \hfill
+  \end{minipage}
+  \begin{minipage}[t]{\rcol}
+    {\bf \Large #1} | {\bf \normalsize #3}\\
+    {\normalsize #4}
+
+    {\normalsize #5}
+    \normalsize
+  \end{minipage}
+}
+
+\newcommand{\rightblock}[2]{
+  \noindent
+  \begin{minipage}[t]{\lcol}
+    {\large #1}
+    \hfill
+  \end{minipage}
+  \begin{minipage}[t]{\rcol}
+    {\large #2}
+  \end{minipage}
+}
+
+\newcommand{\skilltype}[1]{
+  {\bf \large #1}
+}
+
+\lhead{\Huge Luc Kusters}
+\rhead{\Huge Curiculum Vitae}
+%\rfoot{\color{gray}Last updated: \today}
+
+\begin{document}
+%\sffamily
+\thispagestyle{fancy}
+\personaldata{
+  \large
+  \dataalign{Name}{Luc Kusters}
+  \dataalign{Adress}{Malteserstr.\ 14, 52062 Aachen}
+  \dataalign{E-mail}{\href{mailto:luc.kusters@rwth-aachen.de}{luc.kusters@rwth-aachen.de}}
+  \dataalign{Mobile number}{+31 6 22204051}
+  \dataalign{Date of birth}{24.09.1997, Kerkrade (NL)}
+  \dataalign{Nationality}{Dutch}
+  \dataalign{Linkedin}{\url{https://bit.ly/2UN0j43}}
+}
+
+\theme{Education}{
+  \experience{MSc Physics}{2020 -- 2022}{RWTH Aachen University}{Aachen, Germany}{Quantum Information Technology \& Nano Electronics}
+
+  \expsep
+  \experience{BSc Physics}{2016 -- 2020}{RWTH Aachen University}{Aachen, Germany}{
+  Thesis: {\it Magnetotransport on Topological Insulator Hall-Bar Structures}}
+}
+
+\theme{Work Experience}{
+  \experience{Student Assistant}{05/2019 -- Current}{Physikalische Institut IA. RWTH}{Aachen, Germany}{
+  \begin{tightemize}
+    \item Developed PID controller software.
+    \item Front-end web-interface using HTML, CSS (Bootstrap) and Javascript.
+    \item Back-end server using Node-js.
+    \item Hardware drivers using c++ with Boost libraries.
+  \end{tightemize}
+}
+  \expsep
+
+  \experience{Private Tutor Math \& Physics}{2016 -- 2018}{Various locations}{Netherlands}{
+  \begin{tightemize}
+  \item Personal mathematics tutor at Avanti K1ds, Vaals, Netherlands (2017-2018).
+  \item Personal tutor physics, Heerlen, Netherlands (2017).
+  \item Group tutor physics at Sintermeerten College, Heerlen, Netherlands (2016).
+  \end{tightemize}
+  }
+}
+
+\theme{Internships}{
+  \experience{Bachelor Student}{04/2020 -- 07/2020}{PGI-9 Forschungszentrum Jülich}{Jülich, Germany}{
+  \begin{tightemize}
+  \item Experimental physics research into topological insulators for bachelor's thesis.
+    \item Gained experience using the QCoDeS Python data acquisition framework for experimental device readouts.
+  \end{tightemize}}
+}
+\clearpage
+
+\theme{Skills \& Qualifications}{
+  \rightblock{\textbf{Programming /\\Scripting}}{Python, C/C++, JavaScript,\\ Shell, CMake}
+ 
+  \expsep
+  \rightblock{\textbf{Web Development}}{HTML, CSS, Bootstrap, Node.js}
+ 
+  \expsep
+  \rightblock{\textbf{Microcontrollers}}{Raspberry Pi, Arduino}
+ 
+  \expsep
+  \rightblock{\textbf{Operating Systems}}{Linux, Windows}
+
+  \expsep
+  \rightblock{\textbf{Typesetting}}{\LaTeX, Microsoft Office}
+
+  \expsep 
+  \rightblock{\textbf{Languages}}{\lang{Dutch}{native} \\\lang{English}{Proficient (C2)} \\\lang{German}{Proficient (C1)}}
+}
+
+\theme{Extracurricular Activities \& Voluntary work}{
+  \rightblock{\textbf{Student Association}}{\textbf{K.A.V. Alcuinus}}
+
+  \expsep
+  \rightblock{05/2019 -- 11/2019}{Chairman}
+
+  \expsep
+  \rightblock{11/2018 -- 05/2019}{Treasurer}
+
+  \expsep
+  \rightblock{10/2017 -- 11/2018}{Vice Chairman}
+}
+
+\theme{School Diploma}{
+  \experience{VWO Diploma}{2009 -- 2016}{Graaf Huyn College}{Geleen, Netherlands}{\normalsize Natuur \& Techniek, Natuur \& Gezondheid}
+}
+
+\theme{Hobbys}
+{
+  \rightblock{}{Reading, programming, self study}
+}
+
+\vfill
+
+\end{document}
